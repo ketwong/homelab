@@ -12,4 +12,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Enable Nested Virtualization on Hyper-V: This can be done through PowerShell with the following command. Please replace <VMName> with the name of your VM:
 
 
+# build and run docker container 
 
+git clone https://github.com/ketwong/homelab.git
+
+cd .\homelab\ansible
+
+docker build -t ansible-container .
+
+docker run -it ansible-container
