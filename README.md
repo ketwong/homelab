@@ -20,4 +20,5 @@ cd .\homelab\ansible
 
 docker build -t ansible-container .
 
-docker run -it ansible-container
+docker run -d -p 2222:22 ansible-container
+

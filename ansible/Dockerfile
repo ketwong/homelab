@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+# Set non-interactive environment variable for geographic area
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y openssh-server nano
 
 # Install Ansible and other dependencies
