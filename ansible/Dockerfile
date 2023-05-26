@@ -3,7 +3,10 @@ FROM ubuntu:latest
 # Set non-interactive environment variable for geographic area
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y openssh-server nano
+RUN apt-get update && apt-get install -y openssh-server nano git
+
+# Clone Git repository
+RUN git clone https://github.com/ketwong/homelab.git /root/homelab
 
 # Install Ansible and other dependencies
 RUN apt-get install -y software-properties-common
