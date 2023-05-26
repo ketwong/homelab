@@ -18,7 +18,8 @@ RUN pip3 install pywinrm
 
 # Configure SSH server
 RUN echo 'root:root' | chpasswd
-RUN sed 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' -i /etc/ssh/sshd_config
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN service ssh start
 
-CMD ["/bin/bash"]
+# Start the SSH server to keep the container running
+CMD ["/usr/sbin/sshd", "-D"]
