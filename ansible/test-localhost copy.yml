@@ -1,0 +1,13 @@
+---
+- name: Test Playbook
+  hosts: my_windows_hosts
+  gather_facts: false
+
+  tasks:
+    - name: Display Hello World
+      win_command: echo Hello, World!
+      register: output
+
+    - name: Print Output
+      debug:
+        var: output.stdout
