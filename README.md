@@ -11,7 +11,7 @@ Enable Nested Virtualization on Hyper-V: This can be done through PowerShell wit
 
 Configura vagrant host
 ```
-ansible-playbook -i inventory.ini test-playbook.yml -e "ansible_user=<username> ansible_password=<password> ansible_host=<ketlaptop_ip_address>"
+ansible-playbook -i inventory.ini test-playbook.yml -e "ansible_user=<username> ansible_password=<password> ansible_host=vagrantIP"
 
 ```
 
