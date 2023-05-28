@@ -31,7 +31,7 @@ git clone https://github.com/ketwong/homelab.git
 
 cd .\homelab\ansible
 
-docker build -t ansible-container .
+docker build -t ansible-container . --no-cache
 
 docker run -d -it -p 2222:22 ansible-container /bin/bash
 
