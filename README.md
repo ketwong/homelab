@@ -9,8 +9,20 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 Enable Nested Virtualization on Hyper-V: This can be done through PowerShell with the following command. Please replace <VMName> with the name of your VM:
 
-Add root as administrator account to host machine
+Configura vagrant host
+```
+ansible-playbook -i inventory.ini test-playbook.yml -e "ansible_user=<username> ansible_password=<password> ansible_host=<ketlaptop_ip_address>"
 
+```
+
+```
+Add root as administrator account to host machine
+```
+
+
+```
+change computername to vagrant
+```
 
 
 # build and run docker container 
@@ -22,3 +34,5 @@ cd .\homelab\ansible
 docker build -t ansible-container .
 
 docker run -d -it -p 2222:22 ansible-container /bin/bash
+
+
